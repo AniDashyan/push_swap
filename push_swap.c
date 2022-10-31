@@ -30,11 +30,11 @@ int	main(int argc, char **argv)
 		check_duplicates(str, j);
 		a = fill_stack(str);
 		b = ft_lstnew(10);
-		push(a, &b);
-		while (b)
+		pa(a, b);
+		while (a)
 		{
-			ft_printf("%d\n", b->data);
-			b = b->next;
+			ft_printf("%d\n", a->data);
+			a = a->next;
 		}
 	}
 	else

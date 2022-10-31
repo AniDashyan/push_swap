@@ -117,5 +117,4 @@ void	check_duplicates(char **str, int len)
 		i++;
 	}
 	free(nums);
-	nums = NULL;
 }

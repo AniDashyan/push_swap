@@ -26,7 +26,7 @@ clean:
 			$(RM) $(OBJS) ft_printf/*.o libft/*.o
 
 fclean:		clean
-			$(RM) $(NAME) ft_printf/libftprintf.a libft/libft.a
+			$(RM) $(NAME) ft_printf/printf.a libft/libft.a
 
 re:			fclean all
 
