@@ -7,7 +7,6 @@ void	reverse_rotate(t_stack **top)
 
 	if (*top == NULL || (*top)->next == NULL)
 		return ;
-
 	tail = ft_lstlast(*top);
 	tmp = ft_lstseclast(*top);
 	tmp->next = NULL;

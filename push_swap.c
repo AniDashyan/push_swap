@@ -7,7 +7,6 @@ int	main(int argc, char **argv)
 	char	**str;
 	char	*join;
 	t_stack	*a;
-	t_stack *b;
 
 	i = 1;
 	j = 0;
@@ -27,15 +26,14 @@ int	main(int argc, char **argv)
 			fake_atoi(str[j]);
 			j++;
 		}
-		check_duplicates(str, j);
-		a = fill_stack(str);
-		b = ft_lstnew(10);
-		pa(a, b);
-		while (a)
-		{
-			ft_printf("%d\n", a->data);
-			a = a->next;
+		int *b = zeros_validation(str, j);
+		int k = 0;
+		while (b[k])
+		{	
+			ft_printf("%d\n", b[k]);
+			k++;
 		}
+		a = fill_stack(str);
 	}
 	else
 		ft_printf("NO");

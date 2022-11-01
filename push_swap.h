@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stddef.h>
 # include "ft_printf/ft_printf.h"
 # include "libft/libft.h"
 
@@ -24,7 +25,10 @@ void	rrr(t_stack *a, t_stack *b);
 void	ss(t_stack *a, t_stack *b);
 void	sa(t_stack *a);
 void	sb(t_stack *b);
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
+void	pa(t_stack **a, t_stack *b);
+void	pb(t_stack *a, t_stack **b);
+void	print_error(void);
+int		*zeros_validation(char **str, int len);
+int		num_len(int num);
 
 #endif
