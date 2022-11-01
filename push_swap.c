@@ -26,13 +26,6 @@ int	main(int argc, char **argv)
 			fake_atoi(str[j]);
 			j++;
 		}
-		int *b = zeros_validation(str, j);
-		int k = 0;
-		while (b[k])
-		{	
-			ft_printf("%d\n", b[k]);
-			k++;
-		}
 		a = fill_stack(str);
 	}
 	else

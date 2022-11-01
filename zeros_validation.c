@@ -21,19 +21,14 @@ int	*zeros_validation(char **str, int len)
 
 	i = 0;
 	k = 0;
-	num = malloc(sizeof(int) * (len + 1));
-	ft_printf("%d\n", len);
+	num = malloc(sizeof(int) * len);
 	if (!num)
 		return (NULL);
 	while (i < len)
 	{	
-		num[i] = ft_atoi(str[i]);
-		i++;
-	}
-	i = 0;
-	while (num[i])
-	{	
-		ft_printf("bbb %d\n", num[k]);
+		if (num_len(ft_atoi(str[i])) > 16)
+			return (NULL);
+		num[k++] = ft_atoi(str[i]);
 		i++;
 	}
 	return (num);
