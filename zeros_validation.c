@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	num_len(int	num)
+int	num_len(int num)
 {
 	int	len;
 
@@ -13,7 +13,7 @@ int	num_len(int	num)
 	return (len);
 }
 
-int	*zeros_validation(char **str, int len)
+void	zeros_validation(char **str, int len)
 {	
 	int	i;
 	int	k;
@@ -23,13 +23,11 @@ int	*zeros_validation(char **str, int len)
 	k = 0;
 	num = malloc(sizeof(int) * len);
 	if (!num)
-		return (NULL);
+		return ;
 	while (i < len)
 	{	
 		if (num_len(ft_atoi(str[i])) > 16)
-			return (NULL);
-		num[k++] = ft_atoi(str[i]);
+			print_error(LONG_ERR);
 		i++;
 	}
-	return (num);
 }

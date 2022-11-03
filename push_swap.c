@@ -7,6 +7,7 @@ int	main(int argc, char **argv)
 	char	**str;
 	char	*join;
 	t_stack	*a;
+	// t_stack	*b;
 
 	i = 1;
 	j = 0;
@@ -27,6 +28,19 @@ int	main(int argc, char **argv)
 			j++;
 		}
 		a = fill_stack(str);
+		check_duplicates(str, j);
+		zeros_validation(str, j);
+		if (is_sorted(a))
+			ft_printf("Sorted\n");
+		else
+		{
+			sort3(a);
+			while (a)
+			{	
+				ft_printf("%d\n", a->data);
+				a = a->next;
+			}
+		}
 	}
 	else
 		ft_printf("NO");

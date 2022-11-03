@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
-void	print_error(void)
+void	print_error(char *message)
 {
-	ft_printf("Error");
+	ft_printf("%s\n", message);
 	exit(1);
 }
