@@ -1,18 +1,25 @@
 #include "push_swap.h"
 
-// void	sort_small(t_stack *a, t_stack *b)
-// {
-	
-// }
-
-void	sort3(t_stack *a)
+void	sort3(t_stack **a)
 {	
-	if (a == NULL || a->next == NULL)
+	if ((*a) == NULL || (*a)->next == NULL)
 		return ;
-	while (a)
-	{	
-		if (a->data > a->next->data)
-			sa(a);
-		a = a->next;
+	while (is_sorted(*a) == 0)
+	{
+		if ((*a)->data > (*a)->next->data)
+			sa(*a);
+		else if ((*a)->data > (*a)->next->data
+			&& (*a)->next->data > (*a)->next->next->data)
+		{
+			sa(*a);
+			rra(a);
+		}
+		else
+			rra(a);
 	}
+}
+
+void	sort5(t_stack *a, t_stack **b)
+{
+	pb(a, b);
 }

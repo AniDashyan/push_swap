@@ -76,5 +76,5 @@ int	is_sorted(t_stack *top)
 {
 	if (top == NULL || top->next == NULL)
 		return (1);
-	return (top->data > top->next->data && is_sorted(top->next));
+	return (top->data < top->next->data && is_sorted(top->next));
 }

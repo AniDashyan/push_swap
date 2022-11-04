@@ -7,7 +7,7 @@ int	main(int argc, char **argv)
 	char	**str;
 	char	*join;
 	t_stack	*a;
-	// t_stack	*b;
+	t_stack	*b;
 
 	i = 1;
 	j = 0;
@@ -15,6 +15,7 @@ int	main(int argc, char **argv)
 	{
 		join = "";
 		a = NULL;
+		b = NULL;
 		while (i < argc)
 		{
 			join = ft_strjoin(join, argv[i]);
@@ -34,11 +35,16 @@ int	main(int argc, char **argv)
 			ft_printf("Sorted\n");
 		else
 		{
-			sort3(a);
+			sort5(a, &b);
 			while (a)
 			{	
 				ft_printf("%d\n", a->data);
 				a = a->next;
+			}
+			while (b)
+			{
+				ft_printf("%d\n", b->data);
+				b = b->next;
 			}
 		}
 	}

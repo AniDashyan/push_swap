@@ -38,6 +38,7 @@ void	print_error(char *message);
 void	zeros_validation(char **str, int len);
 int		num_len(int num);
 int		is_sorted(t_stack *top);
-void	sort3(t_stack *a);
+void	sort3(t_stack **a);
+void	sort5(t_stack *a, t_stack **b);
 
 #endif
