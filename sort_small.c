@@ -19,7 +19,7 @@ void	sort3(t_stack **a)
 	}
 }
 
-void	sort5(t_stack *a, t_stack **b)
+void	sort4()
 {
-	pb(a, b);
+	
 }

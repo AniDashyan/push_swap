@@ -1,13 +1,18 @@
 #include "push_swap.h"
 
 void	push(t_stack *src, t_stack **dest)
-{
-	if (src == NULL)
+{	
+	t_stack	*tmp;
+
+	if (src == NULL || ft_lstsize(src) < 1)
 	{
 		ft_printf("stack is empty\n");
 		return ;
 	}
-	ft_lstadd_front(dest, src);
+	tmp = src;
+	src = src->next;
+	tmp->next = NULL;
+	ft_lstadd_front(dest, tmp);
 }
 
 void	pa(t_stack **a, t_stack *b)
@@ -20,9 +25,4 @@ void	pb(t_stack *a, t_stack **b)
 {
 	push(a, b);
 	write(1, "pb\n", 3);
-}
-
-void helo(void)
-{
-	return(1);
 }

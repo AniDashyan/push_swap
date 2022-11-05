@@ -1,19 +1,26 @@
 #include "push_swap.h"
 
-void	sign_error(char *str, int i, int *sign)
+int	ft_issign(char c)
 {
-	if (str[i] == '-' || str[i] == '+')
+	return (c == '+' || c == '-');
+}
+
+void	sign_error(char *str, int *i, int *sign)
+{
+	if (str[*i] == '-' || str[*i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[*i] == '-')
 			*sign = -1;
-		else if (str[i] == '-' && (str[i + 1] == '-' || str[i + 1] == '+'))
+		if (str[*i] == '-' && ft_issign(str[*i + 1]))
 			print_error(SIGN_ERR);
-		else if (str[i] == '+' && (str[i + 1] == '-' || str[i + 1] == '+'))
+		if (ft_issign(str[*i]) && !str[*i + 1])
 			print_error(SIGN_ERR);
-		else if ((str[i] == '-' || str[i] == '+') && !str[i + 1])
+		if (ft_issign(str[*i]) && !ft_isdigit(str[*i + 1]))
 			print_error(SIGN_ERR);
-		i++;
+		(*i)++;
 	}
+	if (ft_isdigit(str[*i]) && ft_issign(str[*i + 1]))	
+		print_error(SIGN_ERR);
 }
 
 void	fake_atoi(char *str)
@@ -27,9 +34,9 @@ void	fake_atoi(char *str)
 	num = 0;
 	while (str[i] && ft_isspace(str[i]))
 		i++;
-	sign_error(str, i, &sign);
+	sign_error(str, &i, &sign);
 	if (ft_isdigit(str[i]))
-	{
+	{	
 		while (str[i] && ft_isdigit(str[i]))
 		{
 			num = (num * 10) + (str[i] - '0');

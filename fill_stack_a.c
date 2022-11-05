@@ -11,6 +11,7 @@ t_stack	*fill_stack(char **str)
 	while (str[++i])
 	{
 		num = ft_lstnew(ft_atoi(str[i]));
+		num->pos = i;
 		ft_lstadd_back(&top, num);
 	}
 	return (top);

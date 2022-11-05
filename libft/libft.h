@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adashyan <adashyan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amtadevo <amtadevo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 20:30:22 by adashyan          #+#    #+#             */
-/*   Updated: 2022/10/31 17:11:01 by adashyan         ###   ########.fr       */
+/*   Updated: 2022/11/05 16:38:09 by amtadevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct stack
 {
 	int				data;
+	int				pos;
 	struct stack	*next;
 }	t_stack;
 

@@ -39,6 +39,7 @@ void	zeros_validation(char **str, int len);
 int		num_len(int num);
 int		is_sorted(t_stack *top);
 void	sort3(t_stack **a);
-void	sort5(t_stack *a, t_stack **b);
+void	sort5(t_stack **a, t_stack **b);
+int		max_pos(t_stack *a);
 
 #endif
