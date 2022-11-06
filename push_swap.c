@@ -23,14 +23,18 @@ int	main(int argc, char **argv)
 			i++;
 		}
 		str = ft_split(join, ' ');
+		free(join);
 		while (str[j])
 		{
 			fake_atoi(str[j]);
 			j++;
 		}
-		a = fill_stack(str);
 		check_duplicates(str, j);
 		zeros_validation(str, j);
+		a = fill_stack(str);
+		free(str);
+		if (is_sorted(a))
+			print_error(SORTED);
 		sort5(&a, &b);
 		while (a)
 		{	

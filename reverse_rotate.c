@@ -32,23 +32,3 @@ void	rrr(t_stack *a, t_stack *b)
 	rrb(&b);
 	write(1, "rrr\n", 4);
 }
-
-// int	main(void)
-// {
-// 	t_stack	*a;
-// 	t_stack	*b;
-// 	t_stack	*c;
-
-// 	a = ft_lstnew(10);
-// 	b = ft_lstnew(11);
-// 	a->next = b;
-// 	c = ft_lstnew(12);
-// 	b->next = c;
-// 	reverse_rotate(&a);
-// 	while (a)
-// 	{
-// 		ft_printf("%d\n", a->data);
-// 		a = a->next;
-// 	}
-// 	return (0);
-// }

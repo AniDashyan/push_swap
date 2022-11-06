@@ -14,6 +14,7 @@
 # define _INT_MAX ">INT_MAX error"
 # define _INT_MIN "<INT_MIN error"
 # define LONG_ERR	">16 error"
+# define SORTED "Stack is sorted"
 
 void	fake_atoi(char *str);
 void	skip_zero(char	*str);
