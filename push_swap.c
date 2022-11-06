@@ -31,10 +31,16 @@ int	main(int argc, char **argv)
 		a = fill_stack(str);
 		check_duplicates(str, j);
 		zeros_validation(str, j);
+		sort5(&a, &b);
 		while (a)
 		{	
-			ft_printf("%d\n", a->pos);
+			ft_printf("a->data %d\n", a->data);
 			a = a->next;
+		}
+		while (b)
+		{	
+			ft_printf("b->data %d\n", b->data);
+			b = b->next;
 		}
 	}
 	else

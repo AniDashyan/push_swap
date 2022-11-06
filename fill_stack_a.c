@@ -8,6 +8,7 @@ t_stack	*fill_stack(char **str)
 
 	i = 0;
 	top = ft_lstnew(ft_atoi(str[i]));
+	top->pos = i;
 	while (str[++i])
 	{
 		num = ft_lstnew(ft_atoi(str[i]));
