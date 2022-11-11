@@ -19,7 +19,7 @@ void	sign_error(char *str, int *i, int *sign)
 			print_error(SIGN_ERR);
 		(*i)++;
 	}
-	if (ft_isdigit(str[*i]) && ft_issign(str[*i + 1]))	
+	if (ft_isdigit(str[*i]) && ft_issign(str[*i + 1]))
 		print_error(SIGN_ERR);
 }
 

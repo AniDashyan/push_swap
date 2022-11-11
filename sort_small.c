@@ -26,7 +26,7 @@ void	sort4(t_stack **a, t_stack **b)
 	pa(a, b);
 	if (!is_sorted(*a))
 	{
-		if ((*a)->data == max_pos(*a))
+		if ((*a)->pos == max_pos(*a))
 			ra(a);
 		else if ((*a)->data > (*a)->next->data
 			&& (*a)->data > (*a)->next->next->data)
@@ -34,7 +34,8 @@ void	sort4(t_stack **a, t_stack **b)
 			sa(*a);
 			sa((*a)->next);
 		}
-		else if ((*a)->data > (*a)->next->data)
+		else if ((*a)->data > (*a)->next->data
+			&& (*a)->data < (*a)->next->next->data)
 			sa(*a);
 	}
 }

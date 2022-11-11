@@ -44,5 +44,8 @@ void	sort4(t_stack **a, t_stack **b);
 void	sort5(t_stack **a, t_stack **b);
 int		max_pos(t_stack *a);
 int		min_pos(t_stack *a);
+char	**argv_parsing(int argc, char **argv);
+void	butterfly(t_stack *a, t_stack *b);
+int		*counter_pos(t_stack *a);
 
 #endif
