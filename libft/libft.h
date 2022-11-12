@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amtadevo <amtadevo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adashyan <adashyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 20:30:22 by adashyan          #+#    #+#             */
-/*   Updated: 2022/11/05 16:38:09 by amtadevo         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:18:54 by adashyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,7 @@ void		ft_lstclear(t_stack **lst, void (*del)(int));
 void		ft_lstiter(t_stack *lst, void *(*f)(int));
 t_stack		*ft_lstmap(t_stack *lst, int (f)(int), void (*del)(int));
 t_stack		*ft_lstseclast(t_stack *lst);
+int			ft_issign(char c);
+void		ft_swap(int *a, int *b);
+
 #endif

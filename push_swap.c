@@ -27,11 +27,13 @@ void	small_sort(int argc, t_stack **a, t_stack **b)
 int	main(int argc, char **argv)
 {	
 	int		j;
+	int		*k;
 	char	**str;
 	t_stack	*a;
 	t_stack	*b;
 
 	j = 0;
+	k = NULL;
 	if (argc >= 2)
 	{
 		a = NULL;
@@ -40,20 +42,15 @@ int	main(int argc, char **argv)
 		error_check(str);
 		a = fill_stack(str);
 		free(str);
-		if (is_sorted(a))
-			print_error(SORTED);
-		counter_pos(a);
-		small_sort(argc, &a, &b);
+		indexing(a);
 		while (a)
-		{	
-			ft_printf("a->data %d\n", a->data);
+		{
+			ft_printf("a->data: %d\n", a->data);
+			ft_printf("a->pos: %d\n", a->pos);
 			a = a->next;
 		}
-		while (b)
-		{	
-			ft_printf("b->data %d\n", b->data);
-			b = b->next;
-		}
+		if (is_sorted(a))
+			print_error(SORTED);
 	}
 	return (0);
 }

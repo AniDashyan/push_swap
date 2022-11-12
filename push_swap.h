@@ -47,5 +47,8 @@ int		min_pos(t_stack *a);
 char	**argv_parsing(int argc, char **argv);
 void	butterfly(t_stack *a, t_stack *b);
 int		*counter_pos(t_stack *a);
+int		*str_to_arr(t_stack *a);
+int		*bubble_sort(t_stack *a);
+void	indexing(t_stack *a);
 
 #endif

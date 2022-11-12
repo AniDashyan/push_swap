@@ -1,28 +1,19 @@
-#include "push_swap.h"
+// #include "push_swap.h"
 
-int	*counter_pos(t_stack *a)
-{
-	int	*num;
-	int	i;
+// int	*counter_pos(t_stack *a)
+// {
+// 	int	i;
+// 	int	*counter;
 
-	num = malloc(sizeof(int) * ft_lstsize(a));
-	if (!num)
-		return (NULL);
-	i = 0;
-	while (a)
-	{	
-		num[i] = a->pos;
-		a = a->next;
-		i++;
-	}
-	i = 0;
-	while (num[i])
-	{	
-		ft_printf("%d\n", num[i]);
-		i++;
-	}
-	return (num);
-}
+// 	i = 0;
+// 	counter = (int *)malloc(sizeof(int) * ft_lstsize(a));
+// 	while (i < ft_lstsize(a))
+// 	{	
+// 		counter[i] = i;
+// 		i++;
+// 	}
+// 	return (counter);
+// }
 
 // void	butterfly(t_stack *a, t_stack *b)
 // {	
@@ -30,24 +21,28 @@ int	*counter_pos(t_stack *a)
 // 	int	i;
 
 // 	(void)b;
-// 	counter = counter_pos(a);
 // 	i = 0;
-	// while (counter[i])
-	// {	
-	// 	ft_printf("num[%d]=%d\n", i, counter[i]);
-	// 	i++;
-	// }
-	// if (a->data <= counter[i])
-	// {
-	// 	pb(&a, &b);
-	// 	rb(&b);
-	// 	i++;
-	// }
-	// else if (a->data <= counter[i] + 1)
-	// {
-	// 	pb(&a, &b);
-	// 	i++;
-	// }
-	// else
-	// 	ra(&a);
+// 	counter = counter_pos(a);
+// 	while (counter[i])
+// 	{	
+// 		ft_printf("counter[%d]=%d\n", i, counter[i]);
+// 		i++;
+// 	}
+// 	while (a)
+// 	{
+// 		if (a->pos <= counter[i])
+// 		{
+// 			pb(&a, &b);
+// 			rb(&b);
+// 			i++;
+// 		}
+// 		else if (a->pos <= counter[i] + 1)
+// 		{
+// 			pb(&a, &b);
+// 			i++;
+// 		}
+// 		else
+// 			ra(&a);
+// 		a = a->next;
+// 	}
 // }

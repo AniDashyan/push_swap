@@ -1,10 +1,5 @@
 #include "push_swap.h"
 
-int	ft_issign(char c)
-{
-	return (c == '+' || c == '-');
-}
-
 void	sign_error(char *str, int *i, int *sign)
 {
 	if (str[*i] == '-' || str[*i] == '+')
@@ -58,17 +53,17 @@ void	check_duplicates(char **str, int len)
 	int	*nums;
 
 	i = 0;
-	nums = malloc(sizeof(nums) * len);
+	nums = malloc(sizeof(int) * len);
 	while (str[i])
 	{
 		nums[i] = ft_atoi(str[i]);
 		i++;
 	}
 	i = 0;
-	while (nums[i])
+	while (i < len)
 	{
 		j = i + 1;
-		while (nums[j])
+		while (j < len)
 		{
 			if (nums[i] == nums[j])
 				print_error(DUP_ERR);
