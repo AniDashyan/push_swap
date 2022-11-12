@@ -3,15 +3,18 @@
 void	swap(t_stack *top)
 {
 	int	tmp;
-
+	int	tmp1;
 	if (top == NULL || top->next == NULL)
 	{
 		ft_printf("stack empty\n");
 		exit(-1);
 	}
 	tmp = top->data;
+	tmp1 = top->pos;
 	top->data = top->next->data;
+	top->pos = top->next->pos;
 	top->next->data = tmp;
+	top->next->pos = tmp1;
 }
 
 void	ss(t_stack *a, t_stack *b)

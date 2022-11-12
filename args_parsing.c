@@ -1,14 +1,12 @@
 #include "push_swap.h"
 
 char	**argv_parsing(int argc, char **argv)
-{	
+{
 	int		i;
-	int		j;
 	char	**str;
 	char	*join;
 
 	i = 1;
-	j = 0;
 	join = "";
 	while (i < argc)
 	{

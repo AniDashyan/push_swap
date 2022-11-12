@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 int	*str_to_arr(t_stack *a)
-{	
+{
 	int	i;
 	int	*nums;
 	int	len;
@@ -19,7 +19,7 @@ int	*str_to_arr(t_stack *a)
 }
 
 int	*bubble_sort(t_stack *a)
-{	
+{
 	int	*nums;
 	int	i;
 	int	j;
@@ -28,9 +28,8 @@ int	*bubble_sort(t_stack *a)
 	nums = str_to_arr(a);
 	len = ft_lstsize(a);
 	i = 0;
-	j = 0;
 	while (i < len)
-	{	
+	{
 		j = i + 1;
 		while (j < len)
 		{
@@ -50,13 +49,13 @@ void	indexing(t_stack *a)
 	int	len;
 
 	nums = bubble_sort(a);
-	i = 0;
 	len = ft_lstsize(a);
 	while (a)
 	{
+		i = 0;
 		while (i < len)
-		{	
-			if (nums[i] == a->data)
+		{
+			if (a->data == nums[i])
 				a->pos = i;
 			i++;
 		}

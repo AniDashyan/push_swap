@@ -6,9 +6,9 @@ int	max_pos(t_stack *a)
 	int	pos;
 
 	max = a->data;
-	pos = 0;
+	pos = a->pos;
 	while (a->next)
-	{	
+	{
 		if (a->next->data > max)
 		{
 			max = a->next->data;
@@ -27,7 +27,7 @@ int	min_pos(t_stack *a)
 	min = a->data;
 	pos = 0;
 	while (a->next)
-	{	
+	{
 		if (a->next->data < min)
 		{
 			min = a->next->data;

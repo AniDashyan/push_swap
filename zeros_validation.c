@@ -14,18 +14,16 @@ int	num_len(int num)
 }
 
 void	zeros_validation(char **str, int len)
-{	
+{
 	int	i;
-	int	k;
 	int	*num;
 
 	i = 0;
-	k = 0;
 	num = malloc(sizeof(int) * len);
 	if (!num)
 		return ;
 	while (i < len)
-	{	
+	{
 		if (num_len(ft_atoi(str[i])) > 16)
 			print_error(LONG_ERR);
 		i++;
