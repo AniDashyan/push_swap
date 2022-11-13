@@ -7,11 +7,11 @@ void	sign_error(char *str, int *i, int *sign)
 		if (str[*i] == '-')
 			*sign = -1;
 		if (str[*i] == '-' && ft_issign(str[*i + 1]))
-			print_error(SIGN_ERR);
+			print_error();
 		if (ft_issign(str[*i]) && !str[*i + 1])
-			print_error(SIGN_ERR);
+			print_error();
 		if (ft_issign(str[*i]) && !ft_isdigit(str[*i + 1]))
-			print_error(SIGN_ERR);
+			print_error();
 		(*i)++;
 	}
 	if (ft_isdigit(str[*i]) && ft_issign(str[*i + 1]))
@@ -36,14 +36,14 @@ void	fake_atoi(char *str)
 		{
 			num = (num * 10) + (str[i] - '0');
 			if (num * sign > 2147483647)
-				print_error(_INT_MAX);
+				print_error();
 			else if (num * sign < -2147483648)
-				print_error(_INT_MIN);
+				print_error();
 			i++;
 		}
 	}
 	else
-		print_error(SYMBOL_ERR);
+		print_error();
 }
 
 void	check_duplicates(char **str, int len)
@@ -66,7 +66,7 @@ void	check_duplicates(char **str, int len)
 		while (j < len)
 		{
 			if (nums[i] == nums[j])
-				print_error(DUP_ERR);
+				print_error();
 			j++;
 		}
 		i++;

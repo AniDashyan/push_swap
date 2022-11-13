@@ -25,7 +25,7 @@ void	zeros_validation(char **str, int len)
 	while (i < len)
 	{
 		if (num_len(ft_atoi(str[i])) > 16)
-			print_error(LONG_ERR);
+			print_error();
 		i++;
 	}
 }

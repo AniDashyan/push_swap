@@ -4,7 +4,7 @@ void	push(t_stack **src, t_stack **dest)
 {	
 	t_stack	*tmp;
 
-	if (*src == NULL || ft_lstsize(*src) < 1)
+	if (*src == NULL)
 	{
 		ft_printf("stack is empty\n");
 		return ;
@@ -17,7 +17,7 @@ void	push(t_stack **src, t_stack **dest)
 
 void	pa(t_stack **a, t_stack **b)
 {
-	push(b, a);
+	push(a, b);
 	write(1, "pa\n", 3);
 }
 

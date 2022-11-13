@@ -1,44 +1,49 @@
 #include "push_swap.h"
 
-int	*counter_init(t_stack *a)
+void	print_stack(t_stack *s)
 {
-	int	*counter;
-	int	i;
-	int	len;
-
-	i = 0;
-	len = ft_lstsize(a);
-	counter = malloc(sizeof(int) * len);
-	while (i < len)
+	while (s)
 	{
-		counter[i] = i;
-		i++;
+		ft_printf("s->data = %d\n", s->data);
+		s = s->next;
 	}
-	return (counter);
 }
 
-void	butterfly(t_stack *a, t_stack *b)
+void	b_to_a(t_stack **a, t_stack **b)
 {
-	int	*counter;
-	int	i;
+	int	max;
 
-	counter = counter_init(a);
-	i = 0;
-	while (a)
-	{
-		if (a->pos <= counter[i])
+	while (*b)
+	{	
+		max = max_pos(*b);
+		while (*b && max != (*b)->pos)
 		{
-			pb(&a, &b);
-			rb(&b);
-			i++;
+			rb(b);
+			max = max_pos(*b);
 		}
-		else if (a->pos <= counter[i] + 1)
+		pa(b, a);
+	}
+}
+
+void	butterfly(t_stack **a, t_stack **b)
+{
+	int	counter;
+
+	counter = 0;
+	while (*a)
+	{
+		if ((*a)->pos <= counter)
 		{
-			pb(&a, &b);
-			i++;
+			pb(a, b);
+			rb(b);
+			counter++;
+		}
+		else if ((*a)->pos <= counter + 1)
+		{
+			pb(a, b);
+			counter++;
 		}
 		else
-			ra(&a);
-		a = a->next;
+			ra(a);
 	}
 }

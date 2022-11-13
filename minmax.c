@@ -2,18 +2,13 @@
 
 int	max_pos(t_stack *a)
 {
-	int	max;
 	int	pos;
 
-	max = a->data;
 	pos = a->pos;
-	while (a->next)
+	while (a)
 	{
-		if (a->next->data > max)
-		{
-			max = a->next->data;
-			pos = a->next->pos;
-		}
+		if (a->pos > pos)
+			pos = a->pos;
 		a = a->next;
 	}
 	return (pos);

@@ -35,7 +35,7 @@ void	sa(t_stack *a);
 void	sb(t_stack *b);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-void	print_error(char *message);
+void	print_error();
 void	zeros_validation(char **str, int len);
 int		num_len(int num);
 int		is_sorted(t_stack *top);
@@ -45,10 +45,12 @@ void	sort5(t_stack **a, t_stack **b);
 int		max_pos(t_stack *a);
 int		min_pos(t_stack *a);
 char	**argv_parsing(int argc, char **argv);
-void	butterfly(t_stack *a, t_stack *b);
-int		*counter_init(t_stack *a);
+void	butterfly(t_stack **a, t_stack **b);
 int		*str_to_arr(t_stack *a);
 int		*bubble_sort(t_stack *a);
 void	indexing(t_stack *a);
+void	b_to_a(t_stack **a, t_stack **b);
+void	print_stack(t_stack *s);
+void	sort(int argc, t_stack **a, t_stack **b);
 
 #endif
