@@ -5,6 +5,7 @@ void	print_stack(t_stack *s)
 	while (s)
 	{
 		ft_printf("s->data = %d\n", s->data);
+		ft_printf("s->pos = %d\n", s->pos);
 		s = s->next;
 	}
 }
@@ -14,13 +15,10 @@ void	b_to_a(t_stack **a, t_stack **b)
 	int	max;
 
 	while (*b)
-	{	
+	{
 		max = max_pos(*b);
 		while (*b && max != (*b)->pos)
-		{
 			rb(b);
-			max = max_pos(*b);
-		}
 		pa(b, a);
 	}
 }

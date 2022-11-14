@@ -8,14 +8,6 @@
 # include "ft_printf/ft_printf.h"
 # include "libft/libft.h"
 
-# define DUP_ERR "duplicate error"
-# define SIGN_ERR "sign error"
-# define SYMBOL_ERR	"symbol error"
-# define _INT_MAX ">INT_MAX error"
-# define _INT_MIN "<INT_MIN error"
-# define LONG_ERR	">16 error"
-# define SORTED "Stack is sorted"
-
 void	fake_atoi(char *str);
 void	skip_zero(char	*str);
 void	check_duplicates(char **str, int len);
@@ -35,7 +27,7 @@ void	sa(t_stack *a);
 void	sb(t_stack *b);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-void	print_error();
+void	print_error(void);
 void	zeros_validation(char **str, int len);
 int		num_len(int num);
 int		is_sorted(t_stack *top);
@@ -51,6 +43,6 @@ int		*bubble_sort(t_stack *a);
 void	indexing(t_stack *a);
 void	b_to_a(t_stack **a, t_stack **b);
 void	print_stack(t_stack *s);
-void	sort(int argc, t_stack **a, t_stack **b);
+void	sort(int *argc, t_stack **a, t_stack **b);
 
 #endif
