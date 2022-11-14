@@ -1,7 +1,7 @@
 NAME	= push_swap
 
 CC		= cc
-CFLAGS	=#-Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra
 RM		= rm -f
 
 SRCS	=	$(wildcard *.c)
@@ -20,7 +20,7 @@ lib:
 	cd libft && make && make bonus
 
 $(NAME):	$(OBJS)
-			$(CC) -o $(NAME) $(OBJS) ft_printf/*.o libft/*.o
+			$(CC) -o $(NAME) $(OBJS) ft_printf/*.o libft/*.o -ggdb3
 
 clean:
 			$(RM) $(OBJS) ft_printf/*.o libft/*.o

@@ -14,22 +14,29 @@ void	error_check(char **str)
 	zeros_validation(str, j);
 }
 
-void	small_sort(int argc, t_stack **a, t_stack **b)
-{
-	if (argc == 4)
+void	small_sort(int size, t_stack **a, t_stack **b)
+{	
+	if (size == 4)
 		sort3(a);
-	else if (argc == 5)
+	else if (size == 5)
 		sort4(a, b);
-	else if (argc == 6)
+	else if (size == 6)
 		sort5(a, b);
 }
 
-void	sort(int argc, t_stack **a, t_stack **b)
+void	sort(t_stack **a, t_stack **b)
 {	
-	if (argc <= 6)
-		small_sort(argc, a, b);
+	int	size;
+
+	size = ft_lstsize(*a);
+	if (size <= 5)
+	{	
+		ft_printf("small\n");
+		small_sort(size, a, b);
+	}
 	else
 	{
+		ft_printf("big\n");
 		butterfly(a, b);
 		b_to_a(a, b);
 	}
@@ -37,33 +44,15 @@ void	sort(int argc, t_stack **a, t_stack **b)
 
 int	main(int argc, char **argv)
 {	
-	char	*join;
 	char	**str;
-	int		i;
 	t_stack	*a;
 	t_stack	*b;
 
-	i = 1;
 	if (argc >= 2)
 	{
 		a = NULL;
 		b = NULL;
-		join = "";
-		// str = argv_parsing(argc, argv);
-		while (i < argc)
-		{
-			join = ft_strjoin(join, argv[i]);
-			join = ft_strjoin(join, " ");
-			i++;
-		}
-		ft_printf("joined string is %s\n", join);
-		str = ft_split(join, ' ');
-		i = 0;
-		while (str[i])
-		{	
-			ft_printf("splitted string %d: %s\n", i, str[i]);
-			i++;
-		}
+		str = argv_parsing(argc, argv);
 		error_check(str);
 		a = fill_stack(str);
 		ft_printf("before sort\n");
@@ -72,7 +61,7 @@ int	main(int argc, char **argv)
 		indexing(a);
 		if (!is_sorted(a))
 		{
-			sort(argc, &a, &b);
+			sort(&a, &b);
 			ft_printf("after sort\n");
 			print_stack(a);
 		}
