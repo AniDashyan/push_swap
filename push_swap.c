@@ -15,7 +15,7 @@ void	error_check(char **str)
 }
 
 void	small_sort(int size, t_stack **a, t_stack **b)
-{	
+{
 	if (size == 4)
 		sort3(a);
 	else if (size == 5)
@@ -30,10 +30,7 @@ void	sort(t_stack **a, t_stack **b)
 
 	size = ft_lstsize(*a);
 	if (size <= 5)
-	{	
-		ft_printf("small\n");
 		small_sort(size, a, b);
-	}
 	else
 	{
 		ft_printf("big\n");
@@ -44,22 +41,25 @@ void	sort(t_stack **a, t_stack **b)
 
 int	main(int argc, char **argv)
 {	
+	char	*join;
 	char	**str;
 	t_stack	*a;
 	t_stack	*b;
 
 	if (argc >= 2)
 	{
+		join = "";
 		a = NULL;
 		b = NULL;
+		join = "";
 		str = argv_parsing(argc, argv);
 		error_check(str);
 		a = fill_stack(str);
-		ft_printf("before sort\n");
-		print_stack(a);
-		free(str);
 		indexing(a);
-		if (!is_sorted(a))
+		free(str);
+		if (is_sorted(a))
+			exit (1);
+		else
 		{
 			sort(&a, &b);
 			ft_printf("after sort\n");
