@@ -1,10 +1,16 @@
 #include "push_swap.h"
 
+void	sort2(t_stack **a)
+{
+	if ((*a)->pos > (*a)->next->pos)
+		sa(*a);
+}
+
 void	sort3(t_stack **a)
 {
 	if ((*a) == NULL || (*a)->next == NULL)
 		return ;
-	while (is_sorted(*a) == 0)
+	if (is_sorted(*a) == 0)
 	{
 		if ((*a)->pos > (*a)->next->pos)
 			sa(*a);
@@ -28,7 +34,7 @@ void	sort4(t_stack **a, t_stack **b)
 	sort3(a);
 	pa(b, a);
 	if (!is_sorted(*a))
-	{	
+	{
 		if ((*a)->pos == max_index)
 			ra(a);
 		else if ((*a)->pos == max_index - 1)

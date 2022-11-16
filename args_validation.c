@@ -15,7 +15,20 @@ void	sign_error(char *str, int *i, int *sign)
 		(*i)++;
 	}
 	if (ft_isdigit(str[*i]) && ft_issign(str[*i + 1]))
-		print_error(SIGN_ERR);
+		print_error();
+}
+
+void	num_error(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i + 1] && !ft_isdigit(str[i + 1]))
+			print_error();
+		i++;
+	}
 }
 
 void	fake_atoi(char *str)
@@ -31,7 +44,8 @@ void	fake_atoi(char *str)
 		i++;
 	sign_error(str, &i, &sign);
 	if (ft_isdigit(str[i]))
-	{	
+	{
+		num_error(str);
 		while (str[i] && ft_isdigit(str[i]))
 		{
 			num = (num * 10) + (str[i] - '0');

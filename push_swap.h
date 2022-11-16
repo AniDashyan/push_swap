@@ -43,6 +43,9 @@ int		*bubble_sort(t_stack *a);
 void	indexing(t_stack *a);
 void	b_to_a(t_stack **a, t_stack **b);
 void	print_stack(t_stack *s);
-void	sort(int *argc, t_stack **a, t_stack **b);
+void	sort(t_stack **a, t_stack **b);
+void	free_stack(t_stack *a);
+void	free_str(char **str);
+void	sort2(t_stack **a);
 
 #endif

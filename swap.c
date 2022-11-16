@@ -4,7 +4,7 @@ void	swap(t_stack *top)
 {
 	int	tmp;
 	int	tmp1;
-	
+
 	if (top == NULL || top->next == NULL)
 	{
 		ft_printf("stack empty\n");
