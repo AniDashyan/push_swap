@@ -51,6 +51,8 @@ int	main(int argc, char **argv)
 		a = NULL;
 		b = NULL;
 		str = argv_parsing(argc, argv);
+		if (!str || !str[0])
+			print_error();
 		error_check(str);
 		a = fill_stack(str);
 		indexing(a);
@@ -61,7 +63,5 @@ int	main(int argc, char **argv)
 			free_stack(a);
 		}
 	}
-	else
-		exit(0);
 	return (0);
 }

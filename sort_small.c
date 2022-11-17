@@ -10,7 +10,7 @@ void	sort3(t_stack **a)
 {
 	if ((*a) == NULL || (*a)->next == NULL)
 		return ;
-	if (is_sorted(*a) == 0)
+	while (is_sorted(*a) == 0)
 	{
 		if ((*a)->pos > (*a)->next->pos)
 			sa(*a);
@@ -26,51 +26,22 @@ void	sort3(t_stack **a)
 }
 
 void	sort4(t_stack **a, t_stack **b)
-{
-	int	max_index;
+{	
+	int	min_i;
 
-	max_index = max_pos(*a);
+	min_i = min_pos(*a);
+	while ((*a)->pos != min_i)
+		ra(a);
 	pb(a, b);
 	sort3(a);
 	pa(b, a);
-	if (!is_sorted(*a))
-	{
-		if ((*a)->pos == max_index)
-			ra(a);
-		else if ((*a)->pos == max_index - 1)
-		{
-			sa(*a);
-			sa((*a)->next);
-		}
-		else if ((*a)->pos == max_index - 2)
-			sa(*a);
-	}
 }
 
 void	sort5(t_stack **a, t_stack **b)
-{
-	int	max_i;
-
-	max_i = max_pos(*a);
+{	
+	while ((*a)->pos != 0)
+		ra(a);
 	pb(a, b);
 	sort4(a, b);
 	pa(b, a);
-	if (!is_sorted(*a))
-	{
-		if ((*a)->pos == max_i)
-			ra(a);
-		else if ((*a)->pos == max_i - 1)
-		{
-			sa(*a);
-			sa((*a)->next);
-			sa((*a)->next->next);
-		}
-		else if ((*a)->pos == max_i - 2)
-		{
-			sa(*a);
-			sa((*a)->next);
-		}
-		else
-			sa(*a);
-	}
 }
