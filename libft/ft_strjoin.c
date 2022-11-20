@@ -6,7 +6,7 @@
 /*   By: amtadevo <amtadevo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:12:03 by adashyan          #+#    #+#             */
-/*   Updated: 2022/11/06 17:37:52 by amtadevo         ###   ########.fr       */
+/*   Updated: 2022/11/20 17:49:38 by amtadevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*joined;
+	// char	*tmp;
 	size_t	len1;
 	size_t	len2;
 
@@ -27,5 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strlcpy(joined, s1, len1 + 1);
 	ft_strlcat(joined, s2, len1 + len2 + 1);
+	// tmp = joined;
+	// free(tmp);
 	return (joined);
 }

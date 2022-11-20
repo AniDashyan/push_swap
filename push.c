@@ -6,7 +6,7 @@ void	push(t_stack **src, t_stack **dest)
 
 	if (*src == NULL)
 	{
-		ft_printf("stack is empty\n");
+		// ft_printf("stack is empty\n");
 		return ;
 	}
 	tmp = *src;

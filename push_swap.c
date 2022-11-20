@@ -35,7 +35,8 @@ void	sort(t_stack **a, t_stack **b)
 		small_sort(size, a, b);
 	else
 	{
-		butterfly(a, b);
+		indexing(*a);
+		butterfly(a, b, size);
 		b_to_a(a, b);
 	}
 }
@@ -55,11 +56,11 @@ int	main(int argc, char **argv)
 			print_error();
 		error_check(str);
 		a = fill_stack(str);
-		indexing(a);
 		free_str(str);
 		if (!is_sorted(a))
 		{
 			sort(&a, &b);
+			// print_stack(a);
 			free_stack(a);
 		}
 	}
