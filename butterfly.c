@@ -11,27 +11,23 @@ void	print_stack(t_stack *s)
 	}
 }
 
-void	max_to_top(t_stack **b, int max, int size)
-{
-	if (max < size / 2)
-		while (max != (*b)->pos)
-			rb(b);
-	else
-		while (max != (*b)->pos)
-			rrb(b);
-}
-
 void	b_to_a(t_stack **a, t_stack **b)
 {
-	int	max;
 	int	size;
-
+	int	max;
 
 	while (*b)
 	{
 		size = ft_lstsize(*b);
-		max = max_pos(*b);
-		max_to_top(b, max, size);
+		// ft_printf("size is: %d\n", size);
+		max = place_in_stack(b, largestElement(*b));
+		// ft_printf("max is: %d\n", max);
+		if (max <= (size - 1) / 2)
+			while ((*b)->pos != size - 1)
+				rb(b);
+		else
+			while ((*b)->pos != size - 1)
+				rrb(b);
 		pa(b, a);
 	}
 }
@@ -41,11 +37,11 @@ int	generate_n(int size)
 	int	chunk;
 
 	chunk = 1;
-    if (size < 50)
-        chunk = 3 + (size - 6) / 7;
-    else if (size >= 50 && size < 100)
+	if (size < 50)
+		chunk = 3 + (size - 6) / 7;
+	else if (size >= 50 && size < 100)
         chunk = 10 + (size - 50) / 8;
-    else if (size >= 100 && size < 350)
+	else if (size >= 100 && size < 350)
         chunk = 5 + (size - 100) / 9;
     else if (size >= 350 && size <= 500)
         chunk = 27 + (size - 350) / 15;
@@ -54,14 +50,11 @@ int	generate_n(int size)
     return (chunk);
 }
 
-void	butterfly(t_stack **a, t_stack **b, int size)
+void	a_to_b(t_stack **a, t_stack **b, int n)
 {
 	int	counter;
-	int	n;
 
-	size = ft_lstsize(*a);
 	counter = 0;
-	n = generate_n(size);
 	while (*a)
 	{
 		if ((*a)->pos <= counter)
@@ -78,4 +71,15 @@ void	butterfly(t_stack **a, t_stack **b, int size)
 		else
 			ra(a);
 	}
+}
+
+void	butterfly(t_stack **a, t_stack **b)
+{
+	int	size;
+	int	n;
+
+	size = ft_lstsize(*a);
+	n = generate_n(size);
+	a_to_b(a, b, n);
+	b_to_a(a, b);
 }

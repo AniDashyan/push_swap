@@ -62,3 +62,22 @@ void	indexing(t_stack *a)
 		a = a->next;
 	}
 }
+
+int	place_in_stack(t_stack **a, int	data)
+{
+	int		i;
+	int		index;
+	t_stack	*tmp;
+
+	tmp = *a;
+	index = 0;
+	i = 0;
+	while (tmp)
+	{
+		if (tmp->data == data)
+			index = i;
+		i++;
+		tmp = tmp->next;
+	}
+	return (index);
+}

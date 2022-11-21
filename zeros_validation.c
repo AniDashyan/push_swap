@@ -29,4 +29,5 @@ void	zeros_validation(char **str, int len)
 			print_error();
 		i++;
 	}
+	free(num);
 }

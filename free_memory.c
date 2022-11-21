@@ -17,10 +17,10 @@ void	free_stack(t_stack *head)
 {
 	t_stack	*tmp;
 
-	while (head)
-	{
+	while (head != NULL)
+    {
 		tmp = head;
 		head = head->next;
 		free(tmp);
-	}
+    }
 }

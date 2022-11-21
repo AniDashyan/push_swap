@@ -19,6 +19,20 @@ int	max_pos(t_stack *a)
 	return (index);
 }
 
+int	largestElement(t_stack *head)
+{
+    int	max;
+
+	max = INT_MIN;
+    while (head != NULL)
+	{
+        if (head->data > max)
+            max = head->data;
+        head = head->next;
+    }
+    return (max);
+}
+
 int	min_pos(t_stack *a)
 {
 	int	i;

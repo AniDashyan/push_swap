@@ -7,11 +7,14 @@ void	swap(t_stack *top)
 	if (top == NULL || top->next == NULL)
 	{
 		// ft_printf("stack empty\n");
-		exit(-1);
+		return ;
 	}
 	tmp = top->data;
 	top->data = top->next->data;
 	top->next->data = tmp;
+	tmp = top->pos;
+	top->pos = top->next->pos;
+	top->next->pos = tmp;
 }
 
 void	ss(t_stack *a, t_stack *b)

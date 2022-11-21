@@ -29,15 +29,13 @@ void	small_sort(int size, t_stack **a, t_stack **b)
 void	sort(t_stack **a, t_stack **b)
 {
 	int	size;
-
 	size = ft_lstsize(*a);
 	if (size <= 5)
 		small_sort(size, a, b);
 	else
 	{
 		indexing(*a);
-		butterfly(a, b, size);
-		b_to_a(a, b);
+		butterfly(a, b);
 	}
 }
 
@@ -57,12 +55,13 @@ int	main(int argc, char **argv)
 		error_check(str);
 		a = fill_stack(str);
 		free_str(str);
-		if (!is_sorted(a))
+		if (is_sorted(a))
 		{
-			sort(&a, &b);
-			// print_stack(a);
 			free_stack(a);
+			return (0);
 		}
+		sort(&a, &b);
+		// print_stack(a);
 	}
 	return (0);
 }

@@ -37,16 +37,18 @@ void	sort5(t_stack **a, t_stack **b);
 int		max_pos(t_stack *a);
 int		min_pos(t_stack *a);
 char	**argv_parsing(int argc, char **argv);
-void	butterfly(t_stack **a, t_stack **b, int size);
+void	butterfly(t_stack **a, t_stack **b);
 int		*str_to_arr(t_stack *a);
 int		*bubble_sort(t_stack *a);
 void	indexing(t_stack *a);
+void	a_to_b(t_stack **a, t_stack **b, int n);
 void	b_to_a(t_stack **a, t_stack **b);
 void	print_stack(t_stack *s);
 void	sort(t_stack **a, t_stack **b);
-void	free_stack(t_stack *a);
+void	free_stack(t_stack *head);
 void	free_str(char **str);
 void	sort2(t_stack **a);
-int		max_index(t_stack *a);
+int		place_in_stack(t_stack **a, int	data);
+int		largestElement(t_stack *head);
 
 #endif
