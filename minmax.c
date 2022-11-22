@@ -19,18 +19,18 @@ int	max_pos(t_stack *a)
 	return (index);
 }
 
-int	largestElement(t_stack *head)
+int	largest_element(t_stack *head)
 {
-    int	max;
+	int	max;
 
 	max = INT_MIN;
-    while (head != NULL)
+	while (head != NULL)
 	{
-        if (head->data > max)
-            max = head->data;
-        head = head->next;
-    }
-    return (max);
+		if (head->data > max)
+			max = head->data;
+		head = head->next;
+	}
+	return (max);
 }
 
 int	min_pos(t_stack *a)

@@ -47,8 +47,8 @@ void	print_stack(t_stack *s);
 void	sort(t_stack **a, t_stack **b);
 void	free_str(char **str);
 void	sort2(t_stack **a);
-int		place_in_stack(t_stack **a, int	data);
-int		largestElement(t_stack *head);
+int		place_in_stack(t_stack **a, int data);
+int		largest_element(t_stack *head);
 void	del(int data);
 
 #endif

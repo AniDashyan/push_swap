@@ -29,6 +29,7 @@ void	small_sort(int size, t_stack **a, t_stack **b)
 void	sort(t_stack **a, t_stack **b)
 {
 	int	size;
+
 	size = ft_lstsize(*a);
 	if (size <= 5)
 	{

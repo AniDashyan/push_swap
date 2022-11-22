@@ -5,10 +5,7 @@ void	swap(t_stack *top)
 	int	tmp;
 
 	if (top == NULL || top->next == NULL)
-	{
-		// ft_printf("stack empty\n");
 		return ;
-	}
 	tmp = top->data;
 	top->data = top->next->data;
 	top->next->data = tmp;

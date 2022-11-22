@@ -19,7 +19,7 @@ void	b_to_a(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		size = ft_lstsize(*b);
-		max = place_in_stack(b, largestElement(*b));
+		max = place_in_stack(b, largest_element(*b));
 		if (max <= (size - 1) / 2)
 			while ((*b)->pos != size - 1)
 				rb(b);
@@ -38,14 +38,14 @@ int	generate_n(int size)
 	if (size < 50)
 		chunk = 3 + (size - 6) / 7;
 	else if (size >= 50 && size < 100)
-        chunk = 10 + (size - 50) / 8;
+		chunk = 10 + (size - 50) / 8;
 	else if (size >= 100 && size < 350)
-        chunk = 5 + (size - 100) / 9;
-    else if (size >= 350 && size <= 500)
-        chunk = 27 + (size - 350) / 15;
-    else if (size > 500)
-        chunk = 37 + (size - 500) / 20;
-    return (chunk);
+		chunk = 7 + (size - 100) / 9;
+	else if (size >= 350 && size <= 500)
+		chunk = 27 + (size - 350) / 15;
+	else if (size > 500)
+		chunk = 37 + (size - 500) / 20;
+	return (chunk);
 }
 
 void	a_to_b(t_stack **a, t_stack **b, int n)

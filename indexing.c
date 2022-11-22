@@ -63,7 +63,7 @@ void	indexing(t_stack *a)
 	}
 }
 
-int	place_in_stack(t_stack **a, int	data)
+int	place_in_stack(t_stack **a, int data)
 {
 	int		i;
 	int		index;

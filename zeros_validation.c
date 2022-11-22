@@ -13,7 +13,6 @@ int	num_len(int num)
 	return (len);
 }
 
-
 void	zeros_validation(char **str, int len)
 {
 	int	i;

@@ -5,10 +5,7 @@ void	push(t_stack **src, t_stack **dest)
 	t_stack	*tmp;
 
 	if (*src == NULL)
-	{
-		// ft_printf("stack is empty\n");
 		return ;
-	}
 	tmp = *src;
 	*src = (*src)->next;
 	tmp->next = NULL;
