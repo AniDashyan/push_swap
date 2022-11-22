@@ -45,10 +45,10 @@ void	a_to_b(t_stack **a, t_stack **b, int n);
 void	b_to_a(t_stack **a, t_stack **b);
 void	print_stack(t_stack *s);
 void	sort(t_stack **a, t_stack **b);
-void	free_stack(t_stack *head);
 void	free_str(char **str);
 void	sort2(t_stack **a);
 int		place_in_stack(t_stack **a, int	data);
 int		largestElement(t_stack *head);
+void	del(int data);
 
 #endif

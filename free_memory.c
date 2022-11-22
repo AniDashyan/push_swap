@@ -13,14 +13,7 @@ void	free_str(char **str)
 	free(str);
 }
 
-void	free_stack(t_stack *head)
+void	del(int data)
 {
-	t_stack	*tmp;
-
-	while (head != NULL)
-    {
-		tmp = head;
-		head = head->next;
-		free(tmp);
-    }
+	(void)data;
 }

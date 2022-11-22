@@ -2,7 +2,7 @@
 
 void	sort2(t_stack **a)
 {
-	if ((*a)->pos > (*a)->next->pos)
+	if ((*a)->data > (*a)->next->data)
 		sa(*a);
 }
 
@@ -22,7 +22,7 @@ void	sort3(t_stack **a)
 }
 
 void	sort4(t_stack **a, t_stack **b)
-{	
+{
 	int	min_i;
 
 	min_i = min_pos(*a);
@@ -43,7 +43,7 @@ void	sort4(t_stack **a, t_stack **b)
 }
 
 void	sort5(t_stack **a, t_stack **b)
-{	
+{
 	int	min_i;
 
 	min_i = min_pos(*a);

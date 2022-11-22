@@ -15,6 +15,5 @@ t_stack	*fill_stack(char **str)
 		num->pos = i;
 		ft_lstadd_back(&top, num);
 	}
-	// free_str(str);
 	return (top);
 }

@@ -31,11 +31,17 @@ void	sort(t_stack **a, t_stack **b)
 	int	size;
 	size = ft_lstsize(*a);
 	if (size <= 5)
+	{
 		small_sort(size, a, b);
+		ft_lstclear(a, del);
+		ft_lstclear(b, del);
+	}
 	else
 	{
 		indexing(*a);
 		butterfly(a, b);
+		ft_lstclear(a, del);
+		ft_lstclear(b, del);
 	}
 }
 
@@ -51,17 +57,17 @@ int	main(int argc, char **argv)
 		b = NULL;
 		str = argv_parsing(argc, argv);
 		if (!str || !str[0])
-			print_error();
+			return (0);
 		error_check(str);
 		a = fill_stack(str);
 		free_str(str);
 		if (is_sorted(a))
 		{
-			free_stack(a);
+			ft_lstclear(&a, del);
+			ft_lstclear(&b, del);
 			return (0);
 		}
 		sort(&a, &b);
-		// print_stack(a);
 	}
 	return (0);
 }

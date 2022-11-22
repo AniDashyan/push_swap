@@ -19,9 +19,7 @@ void	b_to_a(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		size = ft_lstsize(*b);
-		// ft_printf("size is: %d\n", size);
 		max = place_in_stack(b, largestElement(*b));
-		// ft_printf("max is: %d\n", max);
 		if (max <= (size - 1) / 2)
 			while ((*b)->pos != size - 1)
 				rb(b);

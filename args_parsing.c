@@ -5,6 +5,7 @@ char	**argv_parsing(int argc, char **argv)
 	int		i;
 	char	**str;
 	char	*join;
+	// char	*tmp;
 
 	i = 1;
 	join = "";
@@ -15,6 +16,5 @@ char	**argv_parsing(int argc, char **argv)
 		i++;
 	}
 	str = ft_split(join, ' ');
-	free(join);
 	return (str);
 }
